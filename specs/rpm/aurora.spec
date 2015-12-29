@@ -62,7 +62,7 @@ Group:         Applications/System
 License:       ASL 2.0
 URL:           https://aurora.apache.org/
 
-Source0:       https://github.com/apache/aurora/archive/%{version}/aurora.tar.gz
+Source0:       http://www.apache.org/dyn/closer.cgi?action=download&filename=aurora/%{version}/apache-aurora-%{version}.tar.gz#/apache-aurora-%{version}.tar.gz
 Source1:       aurora-scheduler.service
 Source2:       thermos.service
 Source3:       aurora-scheduler.init.sh
@@ -133,6 +133,7 @@ Summary: Mesos executor that runs and monitors tasks scheduled by the Aurora sch
 Group: Applications/System
 
 Requires: mesos >= %{MESOS_VERSION}
+Requires: cyrus-sasl
 %if 0%{?rhel} && 0%{?rhel} < 7
 Requires: python27
 %else
